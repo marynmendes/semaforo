@@ -29,7 +29,7 @@
         "id": "r3",
         "top": 167.15,
         "left": -105.6,
-        "attrs": { "value": "1000" }
+        "attrs": { "value": "330" }
       },
       {
         "type": "wokwi-led",
