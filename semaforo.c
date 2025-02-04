@@ -12,7 +12,7 @@ bool led_yellow_on = false;
 bool led_green_on = false;
 
 //função callback que será chamada repetidamente
-bool repeating_timer_callback(struct  semaforo *t)
+bool repeating_timer_callback(struct repeating_timer *t)
 {
     if(led_red_on == true){
         gpio_put(led_red, led_red_on);
