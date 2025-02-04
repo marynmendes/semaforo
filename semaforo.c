@@ -49,10 +49,11 @@ int main()
 
     //configuração do temporizador para chamar a função de callback a cada 3 segundos
     add_repeating_timer_ms(3000, repeating_timer_callback, NULL, &timer);
-    
-     
+
+    //Mensagem que aparecerá no monitor serial a cada um segundo
     while (true) {
-        printf("Hello, world!\n");
         sleep_ms(1000);
+        printf("1 segundo se passou.\n");
+        
     }
 }
