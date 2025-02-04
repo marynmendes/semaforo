@@ -7,11 +7,28 @@
 #define led_green 11 // luz verde
 
 //variáveis para indicar situação de cada led
-bool led_red_on = false;
+bool led_red_on = true;
 bool led_yellow_on = false;
 bool led_green_on = false;
 
-
+//função callback que será chamada repetidamente
+bool repeating_timer_callback(struct  semaforo *t)
+{
+    if(led_red_on == true){
+        gpio_put(led_red, led_red_on);
+        led_red_on = !led_red_on;
+        led_yellow_on = true;
+    } else if (led_yellow_on == true){
+        gpio_put(led_yellow, led_yellow_on);
+        led_yellow_on = !led_yellow_on;
+        led_green_on = true;
+    } else if (led_green_on == true){
+        gpio_put(led_green, led_green_on);
+        led_green_on = !led_green_on;
+        led_red_on = true;
+    }
+   return true; 
+};
 
 int main()
 {
