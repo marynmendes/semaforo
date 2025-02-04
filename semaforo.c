@@ -34,6 +34,23 @@ int main()
 {
     stdio_init_all();
 
+    //inicialização de cada led
+    gpio_init(led_red);
+    gpio_init(led_yellow);
+    gpio_init(led_green);
+
+    //configuração dos leds como saída
+    gpio_set_dir(led_red, true);
+    gpio_set_dir(led_yellow, true);
+    gpio_set_dir(led_green, true);
+
+    //declaração de uma estrutura de temporizador de repetição
+    struct repeating_timer timer;
+
+    //configuração do temporizador para chamar a função de callback a cada 3 segundos
+    add_repeating_timer_ms(3000, repeating_timer_callback, NULL, &timer);
+    
+     
     while (true) {
         printf("Hello, world!\n");
         sleep_ms(1000);
