@@ -14,15 +14,22 @@ bool led_green_on = false;
 //função callback que será chamada repetidamente
 bool repeating_timer_callback(struct repeating_timer *t)
 {
+    //condições para acionamento de cada led
     if(led_red_on == true){
+        gpio_put(led_yellow, false);
+        gpio_put(led_green, false);
         gpio_put(led_red, led_red_on);
         led_red_on = !led_red_on;
         led_yellow_on = true;
     } else if (led_yellow_on == true){
+        gpio_put(led_red, false);
+        gpio_put(led_green, false);
         gpio_put(led_yellow, led_yellow_on);
         led_yellow_on = !led_yellow_on;
         led_green_on = true;
     } else if (led_green_on == true){
+        gpio_put(led_red, false);
+        gpio_put(led_yellow, false);
         gpio_put(led_green, led_green_on);
         led_green_on = !led_green_on;
         led_red_on = true;
