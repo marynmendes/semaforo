@@ -10,6 +10,6 @@ O projeto pôde ser simulado com ajuda da plataforma wokwi, utilizando
 2) 03 LEDs (vermelho, amarelo e verde).
 3) 03 Resistores de 330 Ω.
 
-O acionamento do semáforo e a torca das luzes ocorre com o uso da função
-da função de callback de temporizador e, enquanto isso ocorre, a mensagem
+O acionamento do semáforo e a troca das luzes ocorre com o uso da função
+de callback de temporizador e, enquanto isso ocorre, a mensagem
 "1 segundo se passou." é exibida a cada segundo.
